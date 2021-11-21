@@ -1,74 +1,134 @@
-.top_side_bar {
-    width: 455px;
-    height: 55px;
-    background: rgba(19, 0, 23, 0.9);
+// .layout {
+//     background-image: url('./../Scoreboard/Frame1.png');
+// }
+
+.teamSidebar {
+    position: fixed;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    color: white;
+    justify-content: center;
+    flex-grow: 1;
+    width: 482px;
+    height: 114px;
+    background-image: url('./backGround.svg');
+    top: 0;
+    &.radiant {
+        left: 614px;
+        .teamFlag {
+            img {
+                filter: invert(100%);
+            }
+        }
+    }
+    &.dire {
+        background-image: url('./backGroundRight.svg');
+        right: 614px;
+        .teamName {
+            margin-left: unset;
+            margin-right: 132px;
+        }
+        .teamFlag {
+            left: calc(100% - 132px);
+            background-image: url('./red_flag.png');
+        }
+    }
+}
+
+.teamName {
+    display: flex;
+    align-items: center;
+    margin-left: 132px;
+    font-family: Bebas Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+.teamFlag {
     position: absolute;
-    font-size: 16px;
-    top:0;
+    top: 0;
+    left: -13px;
+    width: 145px;
+    height: 159px;
+    background-image: url('./green_flag.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        margin-bottom: 18px;
+        object-fit: contain;
+        height: 90%;
+        width: 90%;
+    }
+}
+
+.top_side_bar {
+    width: 482px;
+    height: 114px;
+    position: absolute;
+    top: 0;
     transition: opacity 1s;
-    opacity:1;
+    opacity: 1;
     &.hide {
         opacity: 0;
     }
-    .attack {
-        background-repeat: no-repeat;
-        background-position: 0 2px;
-        background-image: url('./../Scoreboard/sword.png');
-        padding-left:23px;
-    }
+    // .attack {
+    //     background-repeat: no-repeat;
+    //     background-position: 0 2px;
+    //     background-image: url('./../Scoreboard/sword.png');
+    //     padding-left: 23px;
+    // }
 
-    &.right {
-        right: 0;
-        .logo_and_type {
-            right: unset;
-            left: -92px;
+    // &.right {
+    //     right: 0;
+    //     .logo_and_type {
+    //         right: unset;
+    //         left: -92px;
 
-            img {
-                left: unset;
-                right: 6px;
-            }
+    //         img {
+    //             left: unset;
+    //             right: 6px;
+    //         }
 
-            .type_color {
-                left:0;
-                right:unset;
-            }
-        }
-    }
+    //         .type_color {
+    //             left: 0;
+    //             right: unset;
+    //         }
+    //     }
+    // }
 
-    .logo_and_type {
-        position: absolute;
-        right:-92px;
-        width: 92px;
-        height: 55px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        background: rgba(19, 0, 23, 0.9);
-        img {
-            position: relative;
-            left: 6px;
-            max-width: 75px;
-        }
-        .type_color{
-            width: 24px;
-            height: 100%;
-            position: absolute;
-            z-index:999;
-            top:0;
-            right:0;
-            &.radiant {
-                background-color: #16349E;
-            }
-            &.dire {
-                background-color: #BD1313;
-            }
-        }
-    }
+    // .logo_and_type {
+    //     position: absolute;
+    //     right: -92px;
+    //     width: 92px;
+    //     height: 55px;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: flex-end;
+    //     overflow: hidden;
+    //     background: rgba(65, 50, 68, 0.9);
+    //     img {
+    //         position: relative;
+    //         right: 24px;
+    //         max-width: 66px;
+    //     }
+
+    //     .type_color {
+    //         width: 24px;
+    //         height: 100%;
+    //         position: absolute;
+    //         z-index: 999;
+    //         top: 0;
+    //         right: 0;
+    //         &.radiant {
+    //             background-color: #25eb2a;
+    //         }
+    //         &.dire {
+    //             background-color: #bd1313;
+    //         }
+    //     }
+    // }
 }
 .commercial {
     width: 379px;
@@ -77,7 +137,7 @@
     bottom: 0;
     right: 172px;
     transition: opacity 1s;
-    opacity:1;
+    opacity: 1;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -91,12 +151,11 @@
     img {
         position: relative;
         left: 10px;
-        max-width:70%;
+        max-width: 70%;
         max-height: 120px;
 
-        
         transition: opacity 1s;
-        opacity:1;
+        opacity: 1;
         &.hide {
             opacity: 0;
         }
@@ -110,7 +169,7 @@
     bottom: 0;
     right: 172px;
     transition: opacity 1s;
-    opacity:1;
+    opacity: 1;
     &.hide {
         opacity: 0;
     }
@@ -119,75 +178,110 @@ body {
 }
 .player_container {
     display: flex;
+    height: 332px;
     flex-direction: column;
-    position:fixed;
+    position: fixed;
     align-items: center;
-    bottom:0;
-    left:282px;
+    bottom: 0;
+    left: 666px;
     transition: opacity 1s;
-    opacity:1;
+    opacity: 1;
+    background-color: transparent;
     &.hide {
         opacity: 0;
     }
     .player_picture {
-        width: 260px;
-        height: 170px;
-        display: flex;
-
-        justify-content: center;
-        background-color: rgba(1, 3, 20, 1);
-        align-items: flex-end;
-
+        position: relative;
+        margin-top: 90px;
+        width: 284px;
+        height: 242px;
+        margin-left: 4px;
+        background-color: #384047;
+        clip-path: polygon(0 0, 84% 0%, 84% 100%, 12% 100%);
+        .player_picture_border_left {
+            z-index: 9;
+            position: absolute;
+            bottom: 0;
+            left: 2px;
+        }
+        .player_picture_border_right {
+            z-index: 9;
+            position: absolute;
+            bottom: 0;
+            right: 46px;
+        }
         img {
+            clip-path: polygon(1% 1%, 90% 1%, 90% 99%, 13% 99%);
             max-height: 100%;
             max-width: 100%;
         }
     }
     .player_info {
-        height:37px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        background-image: url('./badge.svg');
+        background-position: top left;
+        background-repeat: no-repeat;
+        height: 126px;
         width: 100%;
-        display:flex;
-        align-items: flex-end;
-        background-color: rgba(19, 0, 23, 0.9);
+        display: flex;
+        background-color: transparent;
+        align-items: center;
+
         .team_bar {
             width: 15px;
             height: 100%;
             &.radiant {
-                
-                background-color: #16349E;
-            
+                background-color: #25eb2a;
             }
             &.dire {
-                
-        background-color: #BD1313;
+                background-color: #bd1313;
             }
         }
-        .team_box{
-            width: 60px;
-            height: 100%;
-            z-index:2;
-            display: flex;
+        .team_box {
+            position: absolute;
+            right: 7px;
+            top: 6px;
+
+            &.radiant {
+                fill: #25eb2a;
+            }
+            &.dire {
+                fill: #bd1313;
+            }
         }
         .team_logo {
-            display:flex;
+            display: flex;
             align-items: center;
             justify-content: center;
             img {
-                max-width:30px;
+                max-width: 30px;
             }
         }
         .username {
-            color: white;
-            font-size: 16px;
-            font-weight: 700;
-            flex:1;
-            height: 100%;
-            display:flex;
-            padding-left:20px;
+            margin-right: 32px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            font-family: Bebas Neue;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
             text-transform: uppercase;
+            color: #ffffff;
+            display: flex;
             align-items: center;
-            position: relative;
-            left: -8px;
+            justify-content: center;
+            padding-bottom: 24px;
+            .usernameReal {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                color: #989898;
+            }
             .player_kills {
                 margin-left: auto;
                 margin-right: 20px;

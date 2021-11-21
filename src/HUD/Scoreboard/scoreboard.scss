@@ -1,5 +1,5 @@
-.player_scoreboard{
-    width:165px;
+.player_scoreboard {
+    width: 165px;
     display: flex;
     flex-direction: column;
     color: white;
@@ -18,7 +18,7 @@
         position: relative;
         display: flex;
         justify-content: center;
-        background:red;
+        background: red;
         .level_container {
             display: flex;
             align-items: center;
@@ -37,7 +37,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border-radius:50px;
+                border-radius: 50px;
                 font-weight: 700;
                 background-color: rgba(19, 0, 23, 0.9);
             }
@@ -60,7 +60,7 @@
         width: 100%;
         height: 38px;
         background-color: rgba(19, 0, 23, 0.9);
-        margin-bottom:5px;
+        margin-bottom: 5px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -78,17 +78,16 @@
             background: rgba(19, 0, 23, 0.9);
             width: 80px;
             height: 57px;
-            box-shadow: 0px 4px 20px #070C36;
+            box-shadow: 0px 4px 20px #070c36;
             margin-bottom: 5px;
         }
     }
 }
 .neutral-item {
-    
     width: 78px;
     clip-path: polygon(50% 0, calc(50% + 28.5px) 50%, 50% 100%, calc(50% - 28.5px) 50%);
     height: 57px;
-    
+
     margin: auto;
     position: relative;
     top: -33px;
@@ -104,23 +103,22 @@
     transform: translateX(-50%);
 
     transition: opacity 1s;
-    opacity:1;
+    opacity: 1;
     &.hide {
         opacity: 0;
     }
     > div {
         display: flex;
     }
-
 }
 strong.ad {
     text-transform: uppercase;
     width: 200px;
     img {
-        max-width: 34px;;
+        max-width: 34px;
     }
     transition: opacity 1s;
-    opacity:1;
+    opacity: 1;
     &.hide {
         opacity: 0;
     }
@@ -160,10 +158,10 @@ strong.ad {
             width: 71px;
             margin: 0 10px;
             &.dire {
-                    background-color: #BD1313;
+                background-color: #bd1313;
             }
             &.radiant {
-                    background-color: #16349E;
+                background-color: #25eb2a;
             }
         }
         .match_info {
@@ -194,7 +192,7 @@ strong.ad {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                height:84px;
+                height: 84px;
                 position: relative;
                 letter-spacing: 2px;
                 align-self: center;
@@ -206,7 +204,7 @@ strong.ad {
             margin-right: auto;
         }
         &:last-child {
-            margin-left:auto;
+            margin-left: auto;
         }
         height: 100%;
         width: 156px;

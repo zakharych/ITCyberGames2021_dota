@@ -2,7 +2,7 @@ import React from 'react';
 import { Draft, Team, Faction, Player, TeamDraft } from 'dotagsi';
 import TopSideBar from './TopSideBar';
 
-const Statistics = ({ player, type, teamId, show}: { player: Player | null, type: Faction, teamId: string, show: boolean}) => {
+const Statistics = ({ player, type, teamId, show}: { player: Player | null, type: Faction, teamId: string, show: boolean}) => {    
     if (!player) {
 
         return <TopSideBar type={type} teamId={teamId} show={show}>

@@ -1,7 +1,7 @@
 {
-    "name":"Lexogrine Dota2 HUD",
-    "version":"1.1.0",
-    "author":"Lexogrine",
+    "name":"ITCyberGames2021 Dota2 HUD",
+    "version":"1.0",
+    "author":"ITChalange",
     "legacy": false,
     "radar": true,
     "killfeed": true,

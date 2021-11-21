@@ -1,6 +1,6 @@
 {
-  "name": "lexogrine_dota2_hud",
-  "version": "1.1.0",
+  "name": "ITCyberGames2021_dota2_hud",
+  "version": "1.0",
   "homepage": "./",
   "private": true,
   "dependencies": {
@@ -21,6 +21,7 @@
   "scripts": {
     "zip": "npm-build-zip",
     "start": "craco start",
+    "lint-fix": "eslint --fix",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
