@@ -2,6 +2,13 @@
 //     background-image: url('./../Scoreboard/Frame1.png');
 // }
 
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('./fonts/bebasneueregular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
 .teamSidebar {
     position: fixed;
     display: flex;
@@ -38,7 +45,7 @@
     display: flex;
     align-items: center;
     margin-left: 132px;
-    font-family: Bebas Neue;
+    font-family: BebasNeue;
     font-style: normal;
     font-weight: normal;
     font-size: 40px;
@@ -210,7 +217,7 @@ body {
             display: flex;
             flex-direction: column;
             flex-grow: 1;
-            font-family: Bebas Neue;
+            font-family: BebasNeue;
             font-style: normal;
             font-weight: normal;
             font-size: 28px;
