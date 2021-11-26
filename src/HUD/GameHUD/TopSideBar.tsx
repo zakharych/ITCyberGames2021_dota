@@ -16,7 +16,6 @@ const TopSideBar = ({
     show: boolean;
     team: Team;
 }) => {
-    console.log(team.extra);
     
     return (
         <div className={`top_side_bar ${type === 'radiant' ? 'left' : 'right'} ${!show ? 'hide' : ''}`}>
