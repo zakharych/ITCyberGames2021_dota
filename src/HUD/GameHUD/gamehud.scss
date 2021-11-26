@@ -21,10 +21,12 @@
     top: 0;
     &.radiant {
         left: 616px;
-        .teamFlag {
-            img {
-                filter: invert(100%);
-            }
+        .teamShortName {
+            position: absolute;
+            bottom: -42px;
+            transform: translateX(-50%);
+            left: 62%;
+            clip-path: polygon(0% 4%, 100% 0%, 100% 100%, 0% 100%);
         }
     }
     &.dire {
@@ -38,6 +40,13 @@
             left: calc(100% - 132px);
             background-image: url('./red_flag.png');
         }
+        .teamShortName {
+            position: absolute;
+            bottom: -42px;
+            transform: translateX(-50%);
+            left: 62%;
+            clip-path: polygon(0% 4%, 100% 0%, 100% 100%, 0% 100%);
+        }
     }
 }
 
@@ -49,8 +58,23 @@
     font-style: normal;
     font-weight: normal;
     font-size: 40px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #ffffff;
+}
+.teamShortName {
+    width: 234px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(30, 36, 46, 0.8);
+    border-radius: 0  0 10px 10px;
+    font-size: 30px;
+    font-family: BebasNeue;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #BCBCBC;
 }
 .teamFlag {
     position: absolute;
@@ -124,134 +148,169 @@
         opacity: 0;
     }
 }
-body {
-}
-.player_container {
-    display: flex;
-    height: 332px;
-    flex-direction: column;
-    position: fixed;
-    align-items: center;
-    bottom: 0;
-    left: 664px;
-    width: 288px;
-    transition: opacity 1s;
-    opacity: 1;
-    background-color: transparent;
+
+.playerInfoBlock {
     &.hide {
         opacity: 0;
     }
-    .player_picture {
-        position: relative;
-        margin-top: 90px;
-        width: 244px;
-        height: 242px;
-        background-color: #384047;
-        clip-path: polygon(0px 32px, 100% 0%, 100% 100%, 12% 100%);
-        align-self: flex-start;
-        .player_picture_border_left {
-            z-index: 9;
-            position: absolute;
-            bottom: 0;
-            left: 2px;
-        }
-        .player_picture_border_right {
-            z-index: 9;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-        }
-        img {
-            clip-path: polygon(0% 0%, 97% 0%, 97% 100%, 15% 100%);
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-    }
-    .player_info {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    left: 560px;
+    height: 560px;
+    width: 362px;
+    display: block;
+}
+
+.playerInfo {
+    box-sizing: border-box;
+    position: relative;
+    padding: 15px 0 0 22px;
+    color: #989898;
+    font-family: 'Roboto', sans-serif;
+    font-size: 34px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    height: 354px;
+    &::after {
+        content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 10;
-        background-image: url('./badge.svg');
-        background-position: top left;
-        background-repeat: no-repeat;
-        height: 126px;
-        width: 100%;
-        display: flex;
-        background-color: transparent;
-        align-items: center;
-
-        .team_bar {
-            width: 15px;
-            height: 100%;
-            &.radiant {
-                background-color: #25eb2a;
-            }
-            &.dire {
-                background-color: #bd1313;
-            }
-        }
-        .team_box {
-            position: absolute;
-            right: 7px;
-            top: 6px;
-
-            &.radiant {
-                fill: #25eb2a;
-            }
-            &.dire {
-                fill: #bd1313;
-            }
-        }
-        .team_logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            img {
-                max-width: 30px;
-            }
-        }
-        .username {
-            margin-right: 32px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            font-family: BebasNeue;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 28px;
-            text-transform: uppercase;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-bottom: 24px;
-            .usernameReal {
-                font-family: Roboto;
-                font-style: normal;
-                font-weight: normal;
-                font-size: 18px;
-                color: #989898;
-            }
-            .player_kills {
-                margin-left: auto;
-                margin-right: 20px;
-                font-weight: 500;
-                display: flex;
-                height: 100%;
-                font-size: 14px;
-
-                .player_kill {
-                    background-repeat: no-repeat;
-                    background-position: top 2px center;
-                    width: 20px;
-                    background-size: 18px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: flex-end;
-                }
-            }
-        }
+        height: 1px;
+        width: 149px;
+        background-color: #c4c4c4;
+        top: 67px;
+        left: 23px;
     }
+}
+.playerNickName {
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-family: BebasNeue;
+}
+
+.playerNickRealName {
+    font-family: Roboto;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    margin-bottom: 14px;
+}
+.playerKills {
+    padding-top: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 69px;
+    width: 251px;
+    margin-left: 21px;
+    margin-bottom: 22px;
+}
+.playerStatistics {
+    display: flex;
+    margin-left: 136px;
+    justify-content: space-between;
+    width: 138px;
+}
+.playerStatisticItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    align-items: center;
+}
+
+.statisticAbr {
+    margin-bottom: 11px;
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: #989898;
+        top: 33px;
+        left: 0;
+    }
+}
+
+.teamBox {
+    position: absolute;
+    top: 3px;
+    right: 6px;
+
+    &.dire {
+        fill: #bd1313;
+    }
+    &.radiant {
+        fill: #25eb2a;
+    }
+}
+
+.killItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 24px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.killItemImg {
+    display: block;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 31px;
+    height: 31px;
+    background: #384047;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.killutemIcon {
+    display: block;
+    height: 70%;
+    width: 70%;
+    object-fit: contain;
+}
+.killItemText {
+    text-transform: none;
+
+    letter-spacing: 0.05em;
+    font-size: 20px;
+}
+
+.playerAvatar {
+    position: absolute;
+    width: 241px;
+    height: 236px;
+    background-color: #384047;
+    bottom: 0;
+    right: 15px;
+    overflow: hidden;
+    clip-path: polygon(0% 29px, 100% 0%, 209px 100%, 27px 100%);
+}
+
+.playerAvatarImg {
+    clip-path: polygon(2% 29px, 97% -1%, 208px 100%, 34px 100%);
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.playerAvatarLeftBorder {
+    z-index: 10;
+    position: absolute;
+    top: 28px;
+    left: -1px;
+}
+.playerAvatarRightBorder {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
 }

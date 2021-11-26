@@ -16,6 +16,8 @@ const TopSideBar = ({
     show: boolean;
     team: Team;
 }) => {
+    console.log(team.extra);
+    
     return (
         <div className={`top_side_bar ${type === 'radiant' ? 'left' : 'right'} ${!show ? 'hide' : ''}`}>
             {type === 'radiant' ? (
@@ -24,6 +26,7 @@ const TopSideBar = ({
                     <div className="teamFlag">
                         <img src={`${apiUrl}api/teams/logo/${teamId}`} alt="" />
                     </div>
+                    {team.extra.shortName?  <div className="teamShortName">{team.extra.shortName}</div> : null}
                 </div>
             ) : null}
             {children}
@@ -33,6 +36,7 @@ const TopSideBar = ({
                     <div className="teamFlag">
                         <img src={`${apiUrl}api/teams/logo/${teamId}`} alt="" />
                     </div>
+                    {team.extra.shortName?  <div className="teamShortName">{team.extra.shortName}</div> : null}
                 </div>
             ) : null}
         </div>
