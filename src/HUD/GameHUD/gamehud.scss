@@ -195,6 +195,7 @@
     font-size: 24px;
     letter-spacing: 0.05em;
     margin-bottom: 14px;
+    min-height: 58px;
 }
 .playerKills {
     padding-top: 4px;
@@ -264,17 +265,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    width: 31px;
-    height: 31px;
-    background: #384047;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    // border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    // background: #384047;
+    // box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 
 .killutemIcon {
     display: block;
-    height: 70%;
-    width: 70%;
+    height: 100%;
+    width: 100%;
     object-fit: contain;
 }
 .killItemText {
