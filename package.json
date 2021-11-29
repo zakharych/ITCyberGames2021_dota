@@ -1,6 +1,6 @@
 {
   "name": "ITCyberGames2021_dota2_hud",
-  "version": "1.2",
+  "version": "1.2.1",
   "homepage": "./",
   "private": true,
   "dependencies": {
