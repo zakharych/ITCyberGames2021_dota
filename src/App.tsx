@@ -80,7 +80,7 @@ class App extends React.Component<any, { game: Dota2 | null, steamids: string[],
 				{
 					id: player._id,
 					name: player.username,
-					realName: `${player.firstName} ${player.lastName}`,
+					realName: `${player.firstName.trim()} ${player.lastName.trim()}`,
 					steamid: player.steamid,
 					country: player.country,
 					avatar: player.avatar,
