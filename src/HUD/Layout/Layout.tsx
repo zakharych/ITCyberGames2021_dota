@@ -14,6 +14,7 @@ import Scoreboard, { stringToClock } from '../Scoreboard/Scoreboard';
 
 import ObservedPlayer from '../GameHUD/Game';
 import { actions, configs } from '../../App';
+import MapScore from '../GameHUD/MapScore';
 
 interface Props {
     game: Dota2;
@@ -144,12 +145,6 @@ export default class Layout extends React.Component<Props, State> {
                     </div>
                     <Scoreboard players={game.players} map={game.map} match={match} show={view === 'scoreboard'} />
                 </div>
-                {/* <Statistics
-          player={game.player}
-          type="radiant"
-          teamId={game.map.radiant && game.map.radiant.id || ''}
-          show={view === 'game'}
-        /> */}
                 <TopSideBar
                     type="dire"
                     team={game.map.dire}
@@ -172,6 +167,7 @@ export default class Layout extends React.Component<Props, State> {
                     player={game.player}
                     team={game.player ? (game.player.team_name === 'radiant' ? game.map.radiant : game.map.dire) : null}
                 />
+                <MapScore map={game.map}/>       
             </>
         );
     }
