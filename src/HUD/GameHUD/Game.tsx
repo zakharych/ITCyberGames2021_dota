@@ -30,7 +30,7 @@ const ObservedPlayer = ({
             className="playerInfo"
             style={{ backgroundImage: `url(${playerInfoBg})` }}
           >
-            <div className="playerNickName">{player.name}</div>
+            <div className="playerNickName">{player.name.length>13? `${player.name.substring(0,12)}..` :player.name}</div>
             <div className="playerNickRealName">
               <div className="playerName">
                 {player.realName ? player.realName.split(" ")[0] : null}
